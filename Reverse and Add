@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class ReverseAdd {
+
+	public static void main(String[] args) {
+		System.out.println("Reverse and Add Problem...!");
+		ReverseAdd obj=new ReverseAdd();
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the number: ");
+		int num=sc.nextInt();
+		obj.reverse(num);
+	}
+	public static int reverse(int num) {
+		int temp=num;
+		int rem=0,rev=0;
+		while(num!=0)
+		{
+			rem=num%10;
+			rev=rev*10+rem;
+			num=num/10;
+		}
+		if(rev==temp)
+		{
+			System.out.println(temp+" is a palindrome number.");
+		}
+		else
+		{
+			System.out.println(temp+" is not a palindrome number.");
+			int newNum=temp+rev;
+			System.out.println(newNum+" is new number.");
+			reverse(newNum);
+		}
+		return 0;
+	}
+
+}
