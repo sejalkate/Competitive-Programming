@@ -1,0 +1,40 @@
+public class JollyJumper {
+	public static void main(String[] args) {
+		System.out.println("Program to check sequence is Jolly Jumper or not...");
+		int array[]= {1,2,4,7,22};
+		int size=array.length;
+		int diff,prediff=0;
+		boolean flag=true;
+		System.out.println("Size of array= "+size);
+		if(size>2)
+		{
+			System.out.println("Eligible for Jolly Jumper");
+			for(int i=1;i<size;i++)
+			{
+				diff=Math.abs(array[i]-array[i-1]);
+				if(diff>size || diff==prediff || array[i]==array[i-1])
+				{
+					flag=false;
+				}
+				prediff=diff;
+			}
+			for(int i=0;i<size;i++)
+			{
+				System.out.print(" "+array[i]);
+			}
+			if(flag)
+			{
+				System.out.println(" This sequence is Jolly Jumper...");
+			}
+			else
+			{
+				System.out.println(" This sequence is not Jolly Jumper...");
+			}
+		}
+		else
+		{
+			System.out.println("Not eligible...Already Jolly Jumper");
+			System.out.println("Sequence must contain more than two elements... ");
+		}
+	}
+}
