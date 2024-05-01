@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class ThreeNPlusOne {
+	public static void main(String[] args) {
+		int num;
+		int count=0;
+		System.out.println("***** 3n+1 Problem *****");
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the number= ");
+		num=sc.nextInt();
+		while(num<=0)
+		{
+			System.out.println("Number is invalid..! Please enter positive number= ");
+		    num=sc.nextInt();
+		}
+		System.out.print("3n+1 sequence series= ");
+		while(num!=1)
+		{
+			if(num%2==0)
+			{
+				num=num/2;
+			}
+			else
+			{
+				num=3*num+1;
+			}
+		    count++;
+		    System.out.print(num +"\t");
+		}
+		System.out.println();
+		System.out.println("Total " + count +" terms are present in the series.");
+	}
+}
