@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class WERTYU {
+	public static void main(String[] args) {
+		System.out.println("WERTYU Problem");
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter your string: ");
+		String input=sc.nextLine();
+		String keyboard="`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+		StringBuilder output=new StringBuilder();
+		for( char c:input.toCharArray())
+		{
+		    if(c==' ')
+		    {
+		        output.append(c);
+		    }
+		    else
+		    {
+		       int index=keyboard.indexOf(c);
+		       output.append(keyboard.charAt(index-1));
+		    }
+		}
+		System.out.println("Actual String: "+output);
+	}
+}
