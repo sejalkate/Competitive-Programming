@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class MatrixU {
+	public static void main(String[] args) {
+		  System.out.println("*** To check the matrix is identical or not ***");
+		  System.out.println("Enter number of rows in matrix: ");
+	      Scanner sc = new Scanner(System.in);
+	      int size = sc.nextInt();
+	      int matrix[][] = new int[size][size];
+	      System.out.println("Enter the elements of matrix: ");
+	      for (int i = 0; i < matrix.length; i++) {
+	         for (int j = 0; j < matrix.length; j++) {
+	            matrix[i][j] = sc.nextInt();
+	         }
+	      }
+	      if (identityMatrixCheck(matrix))
+	         System.out.println("The given matrix is an identity matrix...");
+	      else
+	         System.out.println("The given matrix is not an identity matrix...");
+	      }
+	     static boolean identityMatrixCheck(int matrix[][]) {
+	     
+	      for (int i = 0; i < matrix.length; i++) {
+	         for (int j = 0; j < matrix.length; j++) {
+	            if (i == j && matrix[i][j] != 1)
+	               return false;
+	            else if (i != j && matrix[i][j] != 0)
+	               return false;
+	         }
+	      }
+	      return true;
+	}
+}
