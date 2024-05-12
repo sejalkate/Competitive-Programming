@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class CommonPermutation
+{
+	public static void main (String[] args)throws Exception
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        String s;
+        System.out.println("Enter two strings:");
+        while((s=br.readLine())!=null)
+        {
+            int s1Count[]=new int[26];
+            for(char c: s.toCharArray()) s1Count[c-'A']++;
+            int s2Count[]=new int[26];
+            for (char c: br.readLine().toCharArray()) s2Count[c-'A']++;
+            StringBuilder sb=new StringBuilder();
+            for(int i=0;i<26;i++)
+            while(s1Count[i]>0 && s2Count[i]>0)
+            {
+                sb.append((char)('A'+i));
+                s1Count[i]--;
+                s2Count[1]--;
+            }
+            System.out.println("Common Permutation: "+sb.toString());
+        }
+    }
+}
